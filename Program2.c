@@ -44,7 +44,8 @@ void output(struct student* students){
               2. Initials  Score
               ...
               10. Initials Score*/
-     for(int i=0;i<10;i++){
+    int i =0;
+    for(i=0;i<10;i++){
         printf("%d. %s  %d\n", i+1, students[i].initials, students[i].score);
     }
 }
@@ -52,17 +53,18 @@ void output(struct student* students){
 void summary(struct student* students){
      /*Compute and print the minimum, maximum and average scores of the ten students*/
     int sum = 0;
-    for(int i=0; i<10; i++){
+    int i = 0;
+    for(i=0; i<10; i++){
         sum += students[i].score;
     }
     int max = 0;
-    for(int i=0; i<10; i++){
+    for(i=0; i<10; i++){
         if (students[i].score > max){
             max = students[i].score;
         }
     }
     int min = 100;
-    for(int i=0; i<10; i++){
+    for(i=0; i<10; i++){
         if (students[i].score < min){
             min = students[i].score;
         }

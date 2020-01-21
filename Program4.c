@@ -60,8 +60,8 @@ int main(){
     struct student *students = (struct student*)malloc(sizeof(struct student)*n);
     /*Generate random IDs and scores for the n students, using rand().*/
     srand((unsigned)time(NULL));
-    
-    for(int i=0; i<n;i++){
+    int i =0;
+    for(i=0; i<n;i++){
         char c1 = rand()%26 + 'A';
         char c2 = rand()%26 + 'A';
         students[i].initials[0] = c1;
@@ -69,14 +69,14 @@ int main(){
         students[i].score = rand()%101;
     }
     /*Print the contents of the array of n students.*/
-    for(int i =0;i<n;i++){
+    for(i =0;i<n;i++){
         printf("%s\t%d\n", (students+i)->initials, (students+i)->score);
     }
     /*Pass this array along with n to the sort() function*/
     sort(students, n);
     /*Print the contents of the array of n students.*/
     printf("\t after sort\n");
-    for(int i =0;i<n;i++){
+    for(i =0;i<n;i++){
         printf("%s\t%d\n", (students+i)->initials, (students+i)->score);
     }
     return 0;

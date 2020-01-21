@@ -31,18 +31,20 @@ int main(){
     /*Allocate memory for an array of n integers using malloc.*/
     int *int_array1 = (int*)malloc(sizeof(int)*n);
     /*Fill this array with random numbers, using rand().*/
-    for(int i=0;i<n;i++){
+    int i = 0;
+    
+    for(i=0;i<n;i++){
         int_array1[i] = rand();
     }
     /*Print the contents of the array.*/
-    for(int i=0;i<n;i++){
+    for(i=0;i<n;i++){
         printf("%d\n", int_array1[i]);
     }
     /*Pass this array along with n to the sort() function of part a.*/
     sort(int_array1, n);
     /*Print the contents of the array.*/    
     printf("\tafter sort:\n");
-    for(int i=0;i<n;i++){
+    for(i=0;i<n;i++){
         printf("%d\n", int_array1[i]);
     }
     return 0;
