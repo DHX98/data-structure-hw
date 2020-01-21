@@ -23,10 +23,10 @@ void sort(struct student* students, int n){
     /*Sort n students based on their initials*/   
     assert(students != NULL);
     assert(n != 0);
-    char temp; // using for swap
+    char temp; /*using for swap*/
     int i = 0; 
     int j = 0;
-    for(i = 0; i < n-1; i++) // swap sort
+    for(i = 0; i < n-1; i++) /*swap sort*/
         for(j = 0; j < n-i-1; j++){
             if(students[j].initials[0] > students[j+1].initials[0]){
                 temp = students[j].initials[0];
@@ -39,7 +39,7 @@ void sort(struct student* students, int n){
                 students[j].score = students[j+1].score;
                 students[j+1].score = temp;
             }
-            else if(students[j].initials[0] == students[j+1].initials[0]){//first initial same, so go compare the second
+            else if(students[j].initials[0] == students[j+1].initials[0]){/*first initial same, so go compare the second*/
                 if(students[j].initials[1] > students[j+1].initials[1]){
                     temp = students[j].initials[1];
                     students[j].initials[1] = students[j+1].initials[1];

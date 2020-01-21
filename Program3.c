@@ -6,8 +6,8 @@
  */
  
 #include <stdio.h>
-#include <time.h>//for time() seed
-#include <stdlib.h>// for srand()
+#include <time.h>/*for time() seed*/
+#include <stdlib.h>/* for srand()*/
 #include<assert.h>
 
 

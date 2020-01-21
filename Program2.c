@@ -7,7 +7,7 @@
  * and stores them in the array students. prints the minimum score, maximum score 
  * and average score of the 10 students.
  */
- //
+ 
 #include <stdio.h>
 #include<stdlib.h>
 #include<math.h>
@@ -20,7 +20,7 @@ struct student{
 
 struct student* allocate(){
      /*Allocate memory for ten students*/
-     struct student *s_array = (struct student*)malloc(sizeof(struct student)*10);// (type)malloc(size) 
+     struct student *s_array = (struct student*)malloc(sizeof(struct student)*10);/* (type)malloc(size) */
      /*return the pointer*/
      return s_array;
 }
