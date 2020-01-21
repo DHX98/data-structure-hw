@@ -29,7 +29,8 @@ void generate(struct student* students){
      /*Generate random initials and scores for ten students.
 	The two initial letters must be capital and must be between A and Z. 
 	The scores must be between 0 and 100*/
-    for (int i=0;i<10;i++){
+    int i=0;
+    for (i=0;i<10;i++){
         char c1 = rand()%26 + 'A'; 
         char c2 = rand()%26 + 'A';
         students[i].initials[0] = c1;
