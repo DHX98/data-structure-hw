@@ -12,13 +12,11 @@
 */
 void bag2set(struct DynArr *da)
 {       
-        /* FIX ME */
-        /* create new temp memory location */
+         /* FIX ME */
         int i;
         DynArr *tempSet;
         tempSet = newDynArr(da->size);
-        /* copy elements to new location */
-        /* if element already exists then dont add it*/
+        /* copy elements to new location if they're not in new dynarray*/
         double temp;
         int size_of_tempSet = 0;
         for(i = 0; i < da->size; i++){
@@ -28,14 +26,12 @@ void bag2set(struct DynArr *da)
                         pushDynArr(tempSet, temp);
                 }
         }
-        
-        /* transfer temp to new set */
+
         da->size = size_of_tempSet;
         for(i = 0; i < da->size; i++)
                 da->data[i] = tempSet->data[i];
-        /* free temp memory*/
+        /* free*/
         deleteDynArr(tempSet);
-
 }
 
 
