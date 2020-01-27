@@ -33,45 +33,51 @@ char nextChar(char* s)
 */
 int isBalanced(char* s)
 {
- struct DynArr *array = newDynArr(10);
-    char c;
-    while((c = nextChar(s)) != '0'){
-        switch(c){
-            case '{' :
-            case '[' :
-            case '(' :
-                pushDynArr(array, c);
-                break;
+	/*Use the following variables, do not change their names*/
+	char ch;  /*stores the current character from the input string*/
+	char ts;  /*stores the top element of the stack*/
+	int b=1;  /*Boolean variable b=1 means balanced; b=0 means unbalanced string*/
 
-            case '}' :
-                if(topDynArr(array) == '{'){
-                    popDynArr(array);
-                    break;
-                }
-                return 0;
+	DynArr *stack;
+	stack=newDynArr(100);/* initialize the stack with capacity = 100 */
 
-            case ']' :
-                if(topDynArr(array) == '['){
-                    popDynArr(array);
-                    break;
-                }
-                return 0;
 
-            case ')' :
-                if(topDynArr(array) == '('){
-                    popDynArr(array);
-                    break;
-                }
-                return 0;
+	if (s && strlen(s))
+		while(1) /*infinite loop that has to be stopped explicitly*/
+		{
+			ch = nextChar(s); /*get the next character in the string*/
+						 /*stop the while loop when we reach the end of the string*/
+			if(ch==0 || ch=='\0')
+				break;
 
-        }
-    }
-    if(array->size != 0){
-        return 0;
-    }
-    deleteDynArr(array);
-        return 1;
-		
+			if(ch == '(' || ch == '[' || ch == '{' )
+				pushDynArr(stack,ch);
+			else if(ch == ')' || ch == ']' || ch ==  '}')
+			{
+				if(sizeDynArr(stack)==0){
+					b = 0;
+					break;
+				}
+
+				ts= topDynArr(stack); /* using topDynArr's return value set ts*/
+				/*if the char in that index is ')' but there is never a char is ')', b  = 0, by pop all of the indexs*/
+				if((ch==')' && ts!='(') || (ch==']' && ts!='[') || (ch=='}' && ts!='{')){
+					b = 0;
+					break;
+				}
+				else
+					popDynArr(stack);
+          /* FIXME: You will write this part of the function */
+			}
+		}
+		if(sizeDynArr(stack) != 0)
+			b = 0;
+
+		deleteDynArr(stack);/*free memory*/
+		return b;
+
+	/* FIXME: You will write this part of the function */
+
 }
 
 int main(int argc, char* argv[]){
