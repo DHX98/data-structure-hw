@@ -7,7 +7,7 @@
  
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h> // time seed
+#include <time.h> 
 
 int foo(int* a, int* b, int c){
     /* Increment a */
@@ -22,7 +22,7 @@ int foo(int* a, int* b, int c){
 
 int main(){
     /* Declare three integers x,y and z and initialize them randomly to values in [0,10] */
-    srand((unsigned)time(NULL));//seed
+    srand((unsigned)time(NULL));
     int *x = NULL;
     int temp1 = rand()%10;
     x = &temp1;

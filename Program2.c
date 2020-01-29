@@ -83,7 +83,6 @@ void deallocate(struct student* stud){
 }
 
 int main(){
-    struct student* stud = NULL;
     srand((unsigned)time(NULL));
     
     /*call allocate*/
